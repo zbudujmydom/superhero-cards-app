@@ -1,7 +1,12 @@
 import "./App.css";
+import HeroList from "./components/HeroList/HeroList";
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <HeroList />
+    </div>
+  );
 }
 
 export default App;
