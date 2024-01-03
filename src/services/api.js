@@ -1,5 +1,5 @@
-import { getRandomId } from "./getRandomId";
-const url = "https://superheroapi.com/api.php/4315987961960314";
+import { getRandomId } from "../utils/getRandomId";
+const url = `https://superheroapi.com/api/${process.env.REACT_APP_ACCESS_TOKEN}`;
 
 export const fetchRandomHeroes = async () => {
   try {
@@ -13,7 +13,10 @@ export const fetchRandomHeroes = async () => {
       image: data.image,
     };
     console.log(newHero);
+    return data;
   } catch (error) {
     console.error(error);
   }
 };
+
+// 2 str
