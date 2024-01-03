@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HeroList from "./components/HeroList/HeroList";
+import HeroesList from "./components/HeroesList/HeroesList.jsx";
 import RandomHeroes from "./components/RandomHeroes/RandomHeroes";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/heroes-list",
-        element: <HeroList />,
+        element: <HeroesList />,
       },
     ],
   },

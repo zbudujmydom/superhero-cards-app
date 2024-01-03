@@ -12,7 +12,6 @@ export const fetchRandomHeroes = async () => {
       stats: data.powerstats,
       image: data.image,
     };
-    console.log(newHero);
     return data;
   } catch (error) {
     console.error(error);
