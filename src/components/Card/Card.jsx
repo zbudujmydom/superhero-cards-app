@@ -9,7 +9,15 @@ const Card = (props) => {
         alt={props.name}
       />
       <h2>{props.name}</h2>
-      <p>{props.powerstats}</p>
+      {props.powerstats ? (
+        <>
+          <p>Power:{props.powerstats.power}</p>
+          <p>Speed:{props.powerstats.speed}</p>
+          <p>Strength:{props.powerstats.strength}</p>
+        </>
+      ) : (
+        <p>No power stats available</p>
+      )}
     </div>
   );
 };

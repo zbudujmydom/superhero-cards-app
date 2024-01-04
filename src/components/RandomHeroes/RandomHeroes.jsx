@@ -27,7 +27,7 @@ const RandomHeroes = () => {
           <Card
             key={hero.id}
             name={hero.name}
-            stats={hero.powerstats}
+            powerstats={hero.powerstats}
             image={hero.image}
           />
         ))}
