@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchRandomHeroes } from "../../services/api";
+import Card from "../Card/Card";
+import styles from "./RandomHeroes.module.css";
 
 const RandomHeroes = () => {
   const [randomHeroes, setRandomHeroes] = useState([]);
@@ -20,11 +22,16 @@ const RandomHeroes = () => {
     <div>
       <h1>Three Random Superheroes</h1>
       {/* <button onClick={loadHeroes}>Generate</button> */}
-      <ul>
+      <div className={styles.cardsContainer}>
         {randomHeroes.map((hero) => (
-          <li key={hero.id}>{hero.name}</li>
+          <Card
+            key={hero.id}
+            name={hero.name}
+            stats={hero.powerstats}
+            image={hero.image}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
