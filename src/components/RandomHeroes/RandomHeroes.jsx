@@ -20,7 +20,7 @@ const RandomHeroes = () => {
 
   return (
     <div>
-      <h1>Three Random Superheroes</h1>
+      {/* <h1>Three Random Superheroes</h1> */}
       {/* <button onClick={loadHeroes}>Generate</button> */}
       <div className={styles.cardsContainer}>
         {randomHeroes.map((hero) => (

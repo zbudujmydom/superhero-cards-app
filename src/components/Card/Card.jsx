@@ -8,13 +8,13 @@ const Card = (props) => {
         src={props.image.url}
         alt={props.name}
       />
-      <h2>{props.name}</h2>
+      <h2 className={styles.heroName}>{props.name}</h2>
       {props.powerstats ? (
-        <>
-          <p>Power:{props.powerstats.power}</p>
-          <p>Speed:{props.powerstats.speed}</p>
-          <p>Strength:{props.powerstats.strength}</p>
-        </>
+        <div className={styles.heroStats}>
+          <p>Power: {props.powerstats.power}</p>
+          <p>Speed: {props.powerstats.speed}</p>
+          <p>Strength: {props.powerstats.strength}</p>
+        </div>
       ) : (
         <p>No power stats available</p>
       )}

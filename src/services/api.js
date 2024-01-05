@@ -6,17 +6,20 @@ export const fetchRandomHeroes = async () => {
     const randomId = getRandomId();
     const response = await fetch(`${url}/${randomId}`);
     const data = await response.json();
-    // const newHero = {
-    //   id: data.id,
-    //   name: data.name,
-    //   stats: data.powerstats,
-    //   image: data.image,
-    // };
-    // console.log(newHero);
     return data;
   } catch (error) {
     console.error(error);
   }
 };
 
-// 2 str
+export const searchByName = async (name) => {
+  try {
+    const response = await fetch(`${url}/search/${name}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// https://superheroapi.com/api/access-token/search/name
