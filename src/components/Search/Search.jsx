@@ -4,6 +4,7 @@ import { searchByName } from "../../services/api";
 import Card from "../Card/Card";
 
 const newHeroesArr = [];
+let isDuplicate = false;
 
 const Search = () => {
   const [userInput, setUserInput] = useState("");
@@ -19,8 +20,13 @@ const Search = () => {
       const usersHero = data.results[0];
 
       if (usersHero) {
-        newHeroesArr.push(usersHero);
-        console.log(newHeroesArr);
+        isDuplicate =
+          newHeroesArr.find((hero) => hero.id === usersHero.id) !== undefined;
+
+        if (!isDuplicate) {
+          newHeroesArr.push(usersHero);
+          console.log(newHeroesArr);
+        }
       }
     } catch (error) {
       console.error(error);
@@ -42,6 +48,9 @@ const Search = () => {
           Search
         </button>
       </form>
+      {isDuplicate && (
+        <p className={styles.duplicateError}>You already have this card.</p>
+      )}
       <div className={styles.cardWrapper}>
         <div className={styles.newCardContainer}>
           {newHeroesArr.map((hero) => (
