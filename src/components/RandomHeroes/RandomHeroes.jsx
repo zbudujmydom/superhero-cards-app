@@ -5,6 +5,7 @@ import styles from "./RandomHeroes.module.css";
 
 const RandomHeroes = ({ selectedHero }) => {
   const [randomHeroes, setRandomHeroes] = useState([]);
+
   const loadHeroes = () => {
     Promise.all([
       fetchRandomHeroes(),
@@ -12,7 +13,6 @@ const RandomHeroes = ({ selectedHero }) => {
       fetchRandomHeroes(),
     ]).then((data) => setRandomHeroes(data));
   };
-  console.log(randomHeroes);
 
   useEffect(() => {
     loadHeroes();

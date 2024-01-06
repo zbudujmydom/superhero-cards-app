@@ -3,9 +3,10 @@ import styles from "./Search.module.css";
 import { searchByName } from "../../services/api";
 import Card from "../Card/Card";
 
+const newHeroesArr = [];
+
 const Search = () => {
   const [userInput, setUserInput] = useState("");
-  const [selectedHero, setSelectedHero] = useState(null);
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -13,15 +14,18 @@ const Search = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(userInput);
     try {
       const data = await searchByName(userInput);
-      console.log(data.results[0]);
       const usersHero = data.results[0];
-      setSelectedHero(usersHero);
+
+      if (usersHero) {
+        newHeroesArr.push(usersHero);
+        console.log(newHeroesArr);
+      }
     } catch (error) {
       console.error(error);
     }
+    setUserInput("");
   };
 
   return (
@@ -38,16 +42,16 @@ const Search = () => {
           Search
         </button>
       </form>
-      {selectedHero && (
-        <div className={styles.newCardContainer}>
+      <div className={styles.newCardContainer}>
+        {newHeroesArr.map((hero) => (
           <Card
-            key={selectedHero.id}
-            name={selectedHero.name}
-            powerstats={selectedHero.powerstats}
-            image={selectedHero.image}
+            key={hero.id}
+            name={hero.name}
+            powerstats={hero.powerstats}
+            image={hero.image}
           />
-        </div>
-      )}
+        ))}
+      </div>
     </div>
   );
 };
