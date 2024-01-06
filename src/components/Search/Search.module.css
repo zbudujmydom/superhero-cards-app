@@ -22,7 +22,7 @@
   justify-content: center;
   margin: 20px 0;
   gap: 20px;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 
