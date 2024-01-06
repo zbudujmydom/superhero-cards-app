@@ -42,15 +42,17 @@ const Search = () => {
           Search
         </button>
       </form>
-      <div className={styles.newCardContainer}>
-        {newHeroesArr.map((hero) => (
-          <Card
-            key={hero.id}
-            name={hero.name}
-            powerstats={hero.powerstats}
-            image={hero.image}
-          />
-        ))}
+      <div className={styles.cardWrapper}>
+        <div className={styles.newCardContainer}>
+          {newHeroesArr.map((hero) => (
+            <Card
+              key={hero.id}
+              name={hero.name}
+              powerstats={hero.powerstats}
+              image={hero.image}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

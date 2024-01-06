@@ -34,3 +34,8 @@
   width: 240px;
   margin-bottom: 10px;
 }
+
+.statsNames {
+  display: flex;
+  justify-content: space-between;
+}

@@ -9,15 +9,22 @@ const Card = (props) => {
         alt={props.name}
       />
       <h2 className={styles.heroName}>{props.name}</h2>
-      {props.powerstats ? (
-        <div className={styles.heroStats}>
-          <p>Power: {props.powerstats.power}</p>
-          <p>Speed: {props.powerstats.speed}</p>
-          <p>Strength: {props.powerstats.strength}</p>
-        </div>
-      ) : (
-        <p>No power stats available</p>
-      )}
+      <div className={styles.heroStats}>
+        <p className={styles.statsNames}>
+          Power:{" "}
+          <span className={styles.statsNumbers}>{props.powerstats.power}</span>
+        </p>
+        <p className={styles.statsNames}>
+          Speed:{" "}
+          <span className={styles.statsNumbers}>{props.powerstats.speed}</span>
+        </p>
+        <p className={styles.statsNames}>
+          Strength:{" "}
+          <span className={styles.statsNumbers}>
+            {props.powerstats.strength}
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
