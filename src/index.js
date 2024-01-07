@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HeroesList from "./components/HeroesList/HeroesList.jsx";
 import RandomHeroes from "./components/RandomHeroes/RandomHeroes";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
+import HeroDetails from "./components/HeroDetails/HeroDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/heroes-list",
         element: <HeroesList />,
+      },
+      {
+        path: "/heroes/:heroId",
+        element: <HeroDetails />,
       },
     ],
   },
