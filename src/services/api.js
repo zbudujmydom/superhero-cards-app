@@ -1,5 +1,5 @@
 import { getRandomId } from "../utils/getRandomId";
-const url = `https://superheroapi.com/api/${process.env.REACT_APP_ACCESS_TOKEN}`;
+const url = `https://superheroapi.com/api.php/${process.env.REACT_APP_ACCESS_TOKEN}`;
 
 export const fetchRandomHeroes = async () => {
   try {
@@ -8,7 +8,8 @@ export const fetchRandomHeroes = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
+    // obsluga bledow
   }
 };
 
@@ -21,5 +22,3 @@ export const searchByName = async (name) => {
     console.error(error);
   }
 };
-
-// https://superheroapi.com/api/access-token/search/name
