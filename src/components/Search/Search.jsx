@@ -56,6 +56,7 @@ const Search = () => {
           {newHeroesArr.map((hero) => (
             <Card
               key={hero.id}
+              id={hero.id}
               name={hero.name}
               powerstats={hero.powerstats}
               image={hero.image}

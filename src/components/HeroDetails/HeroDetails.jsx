@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 
 const HeroDetails = () => {
-  const { heroId } = useParams();
-  console.log(heroId);
+  const { id } = useParams();
+
   return (
     <div>
-      <h1>Details for Hero {heroId}</h1>
+      <h1>Details for Hero {id}</h1>
     </div>
   );
 };

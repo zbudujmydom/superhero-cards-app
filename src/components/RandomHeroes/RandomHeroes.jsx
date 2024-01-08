@@ -25,6 +25,7 @@ const RandomHeroes = () => {
       <div className={styles.cardsContainer}>
         {randomHeroes.map((hero) => (
           <Card
+            id={hero.id}
             key={hero.id}
             name={hero.name}
             powerstats={hero.powerstats}
