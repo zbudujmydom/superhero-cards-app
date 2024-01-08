@@ -3,11 +3,11 @@ import styles from "./Search.module.css";
 import { searchByName } from "../../services/api";
 import Card from "../Card/Card";
 
-const newHeroesArr = [];
 let isDuplicate = false;
 
 const Search = () => {
   const [userInput, setUserInput] = useState("");
+  const [newHeroes, setNewHeroes] = useState([]);
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -20,12 +20,10 @@ const Search = () => {
       const usersHero = data.results[0];
 
       if (usersHero) {
-        isDuplicate =
-          newHeroesArr.find((hero) => hero.id === usersHero.id) !== undefined;
+        isDuplicate = newHeroes.find((hero) => hero.id === usersHero.id);
 
         if (!isDuplicate) {
-          newHeroesArr.push(usersHero);
-          console.log(newHeroesArr);
+          setNewHeroes([...newHeroes, usersHero]); // Update newHeroesArr state
         }
       }
     } catch (error) {
@@ -53,7 +51,7 @@ const Search = () => {
       )}
       <div className={styles.cardWrapper}>
         <div className={styles.newCardContainer}>
-          {newHeroesArr.map((hero) => (
+          {newHeroes.map((hero) => (
             <Card
               key={hero.id}
               id={hero.id}
