@@ -19,15 +19,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <RandomHeroes />,
+        element: <div>glowna</div>,
       },
       {
         path: "/heroes-list",
-        element: <HeroesList />,
+        element: <div>lista</div>,
       },
       {
         path: "/heroes/:id",
-        element: <HeroDetails />,
+        element: <div>details</div>,
       },
     ],
   },
