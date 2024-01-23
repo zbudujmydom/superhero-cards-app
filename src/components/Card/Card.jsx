@@ -5,7 +5,7 @@ const Card = ({ id, name, image, powerstats }) => {
   return (
     <Link to={`/heroes/${id}`} className={styles.linkStyle}>
       <div className={styles.card}>
-        <img className={styles.heroImage} src={image.url} alt={name} />
+        <img className={styles.heroImage} src={image?.url} alt={name} />
         <h2 className={styles.heroName}>{name}</h2>
         <div className={styles.heroStats}>
           <p className={styles.statsNames}>
